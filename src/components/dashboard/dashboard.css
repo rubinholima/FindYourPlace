@@ -1,0 +1,10 @@
+
+.dashBoradContainer.alert{ 
+    padding:3rem 0 5rem;
+}
+.dashBoradContainer .radio{
+    cursor: pointer
+}
+.dashBoradContainer label{
+    cursor: pointer;
+}
