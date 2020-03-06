@@ -46,11 +46,6 @@ You can see a deployed version https://herokuapp.com/.
 * User Profile 
 
 
-
-## Manual Testing 
-
-
-
 ## Authors
 
 * Rubival Santos
