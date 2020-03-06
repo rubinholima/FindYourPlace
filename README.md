@@ -1,9 +1,6 @@
-Project: FIND YOUR PLACE
+# Project 3: FIND YOUR PLACE
 
 FIND YOUR PLACE is designed to provide a quick way to get information about a range of destinations across the world. The app offers information and independent user reviews about hotels, restaurants, and things to do in a host of towns and cities across the planet.
-
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
 
@@ -16,32 +13,39 @@ Navigate to server.js folder and "npm install" to install the required dependenc
 Navigate to root directory and "yarn start" to start client.
 
 
+
 ## Deployment
 
 You can see a deployed version https://herokuapp.com/.
 
 
+
 ## Built With
-React
-Node.js
-Express.js
-Javascript
-MongoDB / Mongoose
-Google Fonts
-GIPHY API
-REST COUNTRIES API
-Google Maps API
-React-background-slideshow
-HTML5
-CSS3
-Bootstrap
-Git & GitHub
+
+* React
+* Node.js
+* Express.js
+* Javascript
+* MongoDB / Mongoose
+* Google Fonts
+* GIPHY API
+* REST COUNTRIES API
+* Google Maps API
+* React-background-slideshow
+* HTML5
+* CSS3
+* Bootstrap
+* Git & GitHub
 
 
 
 ## Features Left to Implement
-User filtering ( favorite city, or personal restaurant or destination to explore, and vice versa.)
-User Profile 
+
+* User filtering ( favorite city, or personal restaurant or destination to explore, and vice versa.)
+
+* User Profile 
+
+
 
 ## Manual Testing 
 
@@ -49,9 +53,9 @@ User Profile
 
 ## Authors
 
-Rubival Santos
-Naima Bensassi
-Pinar Kaya
+* Rubival Santos
+* Naima Bensassi
+* Pinar Kaya
 
 
 
