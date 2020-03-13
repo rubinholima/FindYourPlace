@@ -1,0 +1,7 @@
+body {
+    background-image: url("/08.jpg");
+    background-size:contain;
+    background-position:top;
+    background-repeat: no-repeat;
+    background: cover; 
+}
