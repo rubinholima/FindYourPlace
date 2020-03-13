@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from './node_modules/react';
 import './nav.css';
-import { Link } from 'react-router-dom'
+import { Link } from './node_modules/react-router-dom'
 
 export default class Nav extends Component {
     render() {
