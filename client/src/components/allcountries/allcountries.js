@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import './allcountries.css';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
+import NumberFormat from 'react-number-format';
 import Maps from "../Maps/MapsR";
 import Footer from "../footer/footer"
 
-
-
 export default class AllCountries extends Component {
-    
+
     state = {
         count: 0,
         countries: [],
@@ -17,7 +16,8 @@ export default class AllCountries extends Component {
     };
 
     componentDidMount() {
-        const match  = this.props.match || {params:{reg: 'all'}};
+
+        const match = this.props.match || { params: { reg: 'all' } };
         const path = (match.params.reg !== 'all') ? `https://restcountries.eu/rest/v2/region/${match.params.reg}` : 'https://restcountries.eu/rest/v2/all';
         axios.get(path).then(response => {
             this.setState({
@@ -26,7 +26,9 @@ export default class AllCountries extends Component {
                 length: response.data.length
             });
         });
+
     }
+
 
     sortData = (event) => {
         const sortParam = event.target.value;
@@ -53,8 +55,10 @@ export default class AllCountries extends Component {
         });
     };
 
+
     render() {
         return (
+
             <div>
 
                 <nav className="navbar filterRow text-white bg-dark">
@@ -91,25 +95,23 @@ export default class AllCountries extends Component {
 
                                             <div className="card">
 
-                                                    <h5 className="card-header bg-secondary alert-info text-info">{this.state.count}: {country.name}</h5>
-                                                    <div className="card-body row">
-                                                        <div className="col-md-5 text-center"><img className="imgCountry" src={country.flag} /></div>
-                                                        <div className="col-md-7 desc">
-                                                            <p><b>Capital: </b> {country.capital}</p>
-                                                            <p><b>Region:</b> {country.region}</p>
-                                                            <p><b>Population: </b> {country.population}</p>
-                                                            <p><b>Area: </b> {country.area}</p>
-                                                            <p><b>Alpha Code: </b> {country.alpha2Code}</p>
-                                                        </div>
+                                                <h5 className="card-header bg-secondary alert-info text-white">{this.state.count}: {country.name}</h5>
+                                                <div className="card-body row cardBoardRow">
+                                                    <div className="col-md-5 text-center"><img className="imgCountry" src={country.flag} alt="..." /></div>
+                                                    <div className="col-md-7 desc">
+                                                        <p><b>Capital: </b> {country.capital}</p>
+                                                        <p><b>Region:</b> {country.region}</p>
+                                                        <p><b>Population: </b> <NumberFormat value={country.population} displayType={'text'} thousandSeparator={true} prefix={''} /></p>
+                                                        <p><b>Area: </b> <NumberFormat value={country.area} displayType={'text'} thousandSeparator={true} prefix={''} /> m<sup>2</sup></p>
+                                                        <p><b>Alpha Code: </b> {country.alpha2Code}</p>
                                                     </div>
-                                                    <div className="card-footer ">
-                                                        <NavLink to={`/country/${country.alpha2Code}`} className="text-info">Country Detail</NavLink>
-                                                    </div>
+                                                </div>
+                                                <div className="card-footer ">
+                                                    <NavLink to={`/country/${country.alpha2Code}`} className="text-info">Country Detail</NavLink>
+                                                </div>
                                             </div>
 
                                         </div>
-
-
 
                                     );
                                 })}
@@ -119,7 +121,7 @@ export default class AllCountries extends Component {
 
                     <Footer />
                 </section>
-                
+
             </div>
 
 

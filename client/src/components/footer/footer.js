@@ -1,35 +1,17 @@
 import React from 'react';
-import './footer.css';
+import './footer.css'
 
-var style = {
-    backgroundColor: "black",
-    borderTop: "1px solid #E7E7E7",
-    textAlign: "center",
-    padding: "20px",
-    position: "fixed",
-    left: "0",
-    bottom: "0",
-    height: "60px",
-    width: "100%",
+function Footer() {
+    return (
+
+        <footer className="neal-footer navbar">
+            <div className="footer">
+                <p className="copyright">copyrights &copy; 2020 Rubinho, Naima, Pinar - Find Your Place Special Travel Services. All rights reserved</p>
+            </div>
+        </footer>
+    );
 }
 
-var phantom = {
-    display: 'block',
-    padding: '20px',
-    height: '200px',
-    width: '100%',
-  }
-  
-function Footer({ children }) {
-      return (
-          <div>
-              <div style={phantom} />
-              <div style={style}>
-                  { children }
-              </div>
-          </div>
-      )
-  }
-  
+
 export default Footer
 

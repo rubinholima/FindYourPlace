@@ -1,4 +1,4 @@
-import React from 'react';
+import React from './node_modules/react';
 import './review.css';
 export default class Review extends Component {
     render() {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './nav.css';
-
 import { Link } from 'react-router-dom'
 
 export default class Nav extends Component {
@@ -18,7 +17,6 @@ export default class Nav extends Component {
                             </li>
                             <li className="nav-item active">
                                 <Link className="nav-link" to={`/${'all'}`}>All Countries</Link>
-
                             </li>
                             
                         </ul>
