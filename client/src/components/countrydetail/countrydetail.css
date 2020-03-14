@@ -20,6 +20,16 @@ body {
 
 }
 
+.tourDetail{
+    background-color: beige;
+    height: 420px;
+    border: 10px solid;
+    border-radius: 0.7em;
+    margin-top: 10px;
+    margin-bottom: 40px;;
+
+}
+
 .countryGenInfo{
 
     text-align: center;
@@ -41,4 +51,7 @@ h1 {
 .imgFlag {
     height: 78%;
     width: 100%;
+}
+.testeR {
+    color: aliceblue;
 }

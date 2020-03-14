@@ -8,12 +8,13 @@ import APIGif from "../../utils/APIGif"
 import Footer from "../footer/footer"
 
 
+
 let mapProps = {}
 let localC = {
     lat: 0,
     lng: 0
 }
-let nameC
+let nameC = ""
 export default class CountryDetail extends Component {
 
     searchGiphy = query => {
@@ -31,6 +32,8 @@ export default class CountryDetail extends Component {
         lang: [],
         results: [],
         search: "",
+        countryDetailTour: [],
+        coord: [],
 
     };
 
@@ -39,7 +42,6 @@ export default class CountryDetail extends Component {
 
         const { match } = this.props;
         const path = `https://restcountries.eu/rest/v2/alpha/${match.params.alpha2Code}`;
-
 
         axios.get(path).then(response => {
 
@@ -62,13 +64,23 @@ export default class CountryDetail extends Component {
             nameC = this.state.countryDetail.name
             this.searchGiphy(nameC)
         });
+
+        const path2 = "https://www.triposo.com/api/20190906/location.json?part_of=" + nameC + "&fields=name,snippet&account=22YA2RQ7&token=g2r60v4hgiq3zyo304rc0p3kfkh19zd2"
+        axios.get(path2).then(response => {
+            this.setState({
+                countryDetailTour: response.data.results,
+                coord: response.data.results.map((res) => {
+                    return Object.values(res) + " ****** "
+                })
+            });
+
+        });
+    
     }
 
-
-
+    
     render() {
         localC = latLngCoord(this.state.countryDetail.latlng)
-
         mapProps = {
             options: {
                 center: localC,
@@ -122,14 +134,25 @@ export default class CountryDetail extends Component {
                         </ul>
 
                     </div>
-                    
-                    <hr/>
+
+                    <hr />
 
                     <div className="countryDetail col-md-6">
 
-                        <h5 className="bg-dark text-white countryGenInfo"> Animated Gifs From {this.state.countryDetail.name}</h5>
+                        <h5 className="bg-dark text-white countryGenInfo"> Animated Gifs From {nameC}</h5>
 
                         <ResultList results={this.state.results} />
+                    </div>
+                    <div className="row">
+                        <div className="tourDetail col-md-12">
+
+                            <h5 className="bg-dark text-white countryGenInfo"> Tour Infos For {nameC}</h5>
+
+                            <p>Places To Known       : <b>{this.state.coord}</b></p>
+
+                        </div>
+
+
                     </div>
 
                 </div>

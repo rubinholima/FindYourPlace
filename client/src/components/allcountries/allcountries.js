@@ -118,8 +118,8 @@ export default class AllCountries extends Component {
                             </div>
                         </div>
                     </div>
-
                     <Footer />
+
                 </section>
 
             </div>
