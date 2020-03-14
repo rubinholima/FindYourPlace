@@ -143,7 +143,7 @@ export default class CountryDetail extends Component {
 
                         <ResultList results={this.state.results} />
                     </div>
-                    <div className="row">
+                    {/* <div className="row">
                         <div className="tourDetail col-md-12">
 
                             <h5 className="bg-dark text-white countryGenInfo"> Tour Infos For {nameC}</h5>
@@ -153,7 +153,7 @@ export default class CountryDetail extends Component {
                         </div>
 
 
-                    </div>
+                    </div> */}
 
                 </div>
                 <Footer />
