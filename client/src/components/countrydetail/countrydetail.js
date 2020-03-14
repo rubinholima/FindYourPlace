@@ -65,16 +65,7 @@ export default class CountryDetail extends Component {
             this.searchGiphy(nameC)
         });
 
-        const path2 = "https://www.triposo.com/api/20190906/location.json?part_of=" + nameC + "&fields=name,snippet&account=22YA2RQ7&token=g2r60v4hgiq3zyo304rc0p3kfkh19zd2"
-        axios.get(path2).then(response => {
-            this.setState({
-                countryDetailTour: response.data.results,
-                coord: response.data.results.map((res) => {
-                    return Object.values(res) + " ****** "
-                })
-            });
-
-        });
+        
     
     }
 
@@ -143,17 +134,7 @@ export default class CountryDetail extends Component {
 
                         <ResultList results={this.state.results} />
                     </div>
-                    {/* <div className="row">
-                        <div className="tourDetail col-md-12">
-
-                            <h5 className="bg-dark text-white countryGenInfo"> Tour Infos For {nameC}</h5>
-
-                            <p>Places To Known       : <b>{this.state.coord}</b></p>
-
-                        </div>
-
-
-                    </div> */}
+                    
 
                 </div>
                 <Footer />
