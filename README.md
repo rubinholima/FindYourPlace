@@ -16,7 +16,7 @@ Navigate to root directory and "yarn start" to start client.
 
 ## Deployment
 
-You can see a deployed version https://herokuapp.com/.
+You can see a deployed version https://find-your-place-now.herokuapp.com/.
 
 
 
